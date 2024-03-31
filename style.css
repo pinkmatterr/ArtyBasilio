@@ -33,14 +33,6 @@
   margin-right: 10px;
   margin-left: 10px;
 }
-.highlight-white {
-  background: linear-gradient(180deg,rgba(255,255,255, 0) 65%, #ffffff 65%);
-}
-
-.thin-highlight-white {
-  background: linear-gradient(180deg,rgba(255,255,255, 0) 80%, #ffffff 80%);
-}
-
 
 
 a {
@@ -92,7 +84,7 @@ a {
 
 
 .section-title {
-  font-size: 300%;
+  font-size: 100%;
   text-align: center;
   font-weight: bold;
   margin-top: 0px;
