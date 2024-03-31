@@ -33,6 +33,15 @@
   margin-right: 10px;
   margin-left: 10px;
 }
+.highlight-white {
+  background: linear-gradient(180deg,rgba(255,255,255, 0) 65%, #ffffff 65%);
+}
+
+.thin-highlight-white {
+  background: linear-gradient(180deg,rgba(255,255,255, 0) 80%, #ffffff 80%);
+}
+
+
 
 a {
   text-decoration: none;
