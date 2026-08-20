@@ -356,32 +356,48 @@ a.item:focus-visible {
   border-radius: 50%;
   box-shadow: 0 2px 5px rgba(0,0,0,.28);
 }
-.fav .note {
-  display: none;
+/* the note text lives hidden in the figure; it's shown in the overlay */
+.fav .note { display: none; }
+
+/* full-screen dimmed overlay with the pink comment bubble centered */
+.note-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(10, 6, 3, .82);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  cursor: zoom-out;
+}
+.note-modal[hidden] { display: none; }
+.note-modal-bubble {
   position: relative;
-  margin: 14px 0 0;
-  padding: 12px 14px;
-  background: #fffdf5;
-  border: 1px solid var(--rule);
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,.12);
-  font-family: "Caveat", cursive;
-  font-weight: 700;
-  font-size: 1.25rem;
-  line-height: 1.35;
-  color: var(--ink);
+  width: min(90vw, 620px);
+  aspect-ratio: 1141 / 815;
+  background: url("images/bubble.png") center / contain no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: auto;
+  animation: note-pop .18s ease;
 }
-.fav .note::before {
-  content: "";
-  position: absolute;
-  top: -9px; left: 22px;
-  width: 16px; height: 16px;
-  background: #fffdf5;
-  border-left: 1px solid var(--rule);
-  border-top: 1px solid var(--rule);
-  transform: rotate(45deg);
+@keyframes note-pop {
+  from { transform: scale(.9); opacity: .3; }
+  to   { transform: scale(1);  opacity: 1; }
 }
-.fav.open .note { display: block; }
+.note-modal-text {
+  width: 66%;
+  margin-bottom: 7%;   /* keep text in the oval, above the tail */
+  font-family: "Cutive Mono", "Courier New", monospace;
+  color: #7a2f42;
+  text-align: center;
+  font-size: clamp(1rem, 3.4vw, 1.55rem);
+  line-height: 1.5;
+}
 
 .socials-links { display: flex; gap: 22px; margin-bottom: 26px; }
 .copyright { color: var(--accent); font-size: .82rem; }

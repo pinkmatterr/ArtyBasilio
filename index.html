@@ -270,6 +270,13 @@
         <p class="copyright">© 2024 arty basilio</p>
     </article>
 
+    <!-- ============================ COMMENT OVERLAY ============================ -->
+    <div id="note-modal" class="note-modal" role="dialog" aria-modal="true" aria-label="my thoughts" hidden>
+        <div class="note-modal-bubble">
+            <p class="note-modal-text"></p>
+        </div>
+    </div>
+
     <script>
         (function () {
             var boardView = document.getElementById('board-view');
@@ -290,17 +297,32 @@
             window.addEventListener('hashchange', route);
             route();
 
-            // tap a poster with a note to toggle its comment bubble
+            // tap a poster with a note to show its comment centered on a dimmed overlay
+            var modal = document.getElementById('note-modal');
+            var modalText = modal.querySelector('.note-modal-text');
+            var bubble = modal.querySelector('.note-modal-bubble');
+
+            function openNote(text) {
+                modalText.textContent = text;
+                modal.hidden = false;
+            }
+            function closeNote() { modal.hidden = true; }
+
             Array.prototype.forEach.call(
                 document.querySelectorAll('.fav.has-note .poster'),
                 function (btn) {
                     btn.addEventListener('click', function () {
-                        var fav = btn.parentNode;
-                        var open = fav.classList.toggle('open');
-                        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+                        var note = btn.parentNode.querySelector('.note');
+                        openNote(note ? note.textContent : '');
                     });
                 }
             );
+            // click the dimmed backdrop (but not the bubble itself) or press Esc to close
+            modal.addEventListener('click', closeNote);
+            bubble.addEventListener('click', function (e) { e.stopPropagation(); });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') closeNote();
+            });
         })();
     </script>
 </body>
