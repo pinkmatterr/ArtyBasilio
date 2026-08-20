@@ -349,10 +349,9 @@ a.item:focus-visible {
 /* little pink speech-bubble badge marking a poster that has a note */
 .note-badge {
   position: absolute;
-  top: 6px; right: 6px;
-  width: 34px; height: 26px;
+  bottom: 8px; right: 8px;
+  width: 42px; height: 30px;
   background: url("images/bubble.png") center / contain no-repeat;
-  filter: drop-shadow(0 1px 3px rgba(0,0,0,.35));
 }
 
 /* the comment bubble shown inline when you tap the poster */
