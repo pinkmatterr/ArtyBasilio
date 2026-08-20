@@ -346,58 +346,39 @@ a.item:focus-visible {
 }
 .fav.has-note .poster:hover,
 .fav.has-note .poster:focus-visible { transform: translateY(-2px); outline: none; }
+/* little pink speech-bubble badge marking a poster that has a note */
 .note-badge {
   position: absolute;
   top: 6px; right: 6px;
-  width: 26px; height: 26px;
-  display: grid; place-items: center;
-  font-size: 13px;
-  background: var(--paper);
-  border-radius: 50%;
-  box-shadow: 0 2px 5px rgba(0,0,0,.28);
-}
-/* the note text lives hidden in the figure; it's shown in the overlay */
-.fav .note { display: none; }
-
-/* full-screen dimmed overlay with the pink comment bubble centered */
-.note-modal {
-  position: fixed;
-  inset: 0;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  background: rgba(10, 6, 3, .82);
-  -webkit-backdrop-filter: blur(3px);
-  backdrop-filter: blur(3px);
-  cursor: zoom-out;
-}
-.note-modal[hidden] { display: none; }
-.note-modal-bubble {
-  position: relative;
-  width: min(90vw, 620px);
-  aspect-ratio: 1141 / 815;
+  width: 34px; height: 26px;
   background: url("images/bubble.png") center / contain no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: auto;
-  animation: note-pop .18s ease;
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,.35));
 }
-@keyframes note-pop {
-  from { transform: scale(.9); opacity: .3; }
-  to   { transform: scale(1);  opacity: 1; }
-}
-.note-modal-text {
-  width: 66%;
-  margin-bottom: 7%;   /* keep text in the oval, above the tail */
+
+/* the comment bubble shown inline when you tap the poster */
+.fav .note {
+  display: none;
+  position: relative;
+  margin: 16px 0 0;
+  padding: 14px 16px;
+  background: #f2adc0;
+  border: 2px dashed #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
   font-family: "Cutive Mono", "Courier New", monospace;
-  color: #7a2f42;
-  text-align: center;
-  font-size: clamp(1rem, 3.4vw, 1.55rem);
-  line-height: 1.5;
+  font-size: .92rem;
+  line-height: 1.55;
+  color: #6b2233;
 }
+.fav .note::before {
+  content: "";
+  position: absolute;
+  top: -10px; left: 24px;
+  border: 10px solid transparent;
+  border-top: 0;
+  border-bottom: 10px solid #f2adc0;
+}
+.fav.open .note { display: block; }
 
 .socials-links { display: flex; gap: 22px; margin-bottom: 26px; }
 .copyright { color: var(--accent); font-size: .82rem; }
