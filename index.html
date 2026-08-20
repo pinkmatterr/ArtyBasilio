@@ -243,9 +243,13 @@
         <h1 class="view-title">shows &amp; movies</h1>
         <p class="muted">my favorite films &amp; shows.</p>
         <div class="gallery">
-            <figure class="fav">
-                <img src="images/show1.jpg" alt="Girls (HBO)" />
+            <figure class="fav has-note">
+                <button class="poster" type="button" aria-expanded="false">
+                    <img src="images/show1.jpg" alt="Girls (HBO)" />
+                    <span class="note-badge" aria-hidden="true">💬</span>
+                </button>
                 <figcaption>Girls</figcaption>
+                <p class="note">Lifechanging. Monumental. Will be even better once I watch it in my late 20s — super excited!!!!</p>
             </figure>
             <figure class="fav">
                 <img src="images/movie1.jpg" alt="Everything Everywhere All at Once" />
@@ -285,6 +289,18 @@
             }
             window.addEventListener('hashchange', route);
             route();
+
+            // tap a poster with a note to toggle its comment bubble
+            Array.prototype.forEach.call(
+                document.querySelectorAll('.fav.has-note .poster'),
+                function (btn) {
+                    btn.addEventListener('click', function () {
+                        var fav = btn.parentNode;
+                        var open = fav.classList.toggle('open');
+                        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+                    });
+                }
+            );
         })();
     </script>
 </body>
