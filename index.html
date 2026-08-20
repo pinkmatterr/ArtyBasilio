@@ -1,95 +1,288 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset=“UTF-8” />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Arty Basilio — a little cork board of my projects, interests, and passions." />
     <link rel="stylesheet" href="style.css" />
-    <title> Arty Basilio </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@500;700&family=Cutive+Mono&display=swap" rel="stylesheet" />
+    <title>Arty Basilio</title>
 </head>
 
 <body>
-    <div class="nav-bar">
-        <div class="float: left;">
-            <a href="index.html" class="nav-item" title="Home"></a>
+    <!-- ============================ CORK BOARD (home) ============================ -->
+    <section id="board-view" class="board-view">
+        <div class="board">
+            <div class="surface">
 
-            <div style="float: right;">
-                <a href="#projects" class="nav-item" title="Projects"></a>
+                <!-- ABOUT — Viva México papel picado (the eagle in my flag) -->
+                <a class="item link" style="left:3%;top:3%;width:15%;--r:-4deg;" href="#about">
+                    <span class="pin"></span>
+                    <img class="photo" src="images/viva-mexico.png" alt="Viva México papel picado" />
+                    <span class="cap">about me</span>
+                </a>
+
+                <!-- decorative — Colombia stamp -->
+                <div class="item deco d-stamp" style="left:22%;top:6%;width:18%;--r:3deg;" aria-hidden="true">
+                    <span class="pin"></span>
+                    <img class="photo" src="images/colombia-stamp.png" alt="Colombia postage stamp" />
+                </div>
+
+                <!-- PHOTOS — Fujica camera -->
+                <a class="item link" style="left:44%;top:3%;width:31%;--r:-3deg;" href="#photos">
+                    <span class="pin"></span>
+                    <img class="photo" src="images/camera.png" alt="Vintage Fujica camera" />
+                    <span class="cap">photos</span>
+                </a>
+
+                <!-- FASHION — outfits painting -->
+                <a class="item link" style="left:3%;top:46%;width:16%;--r:4deg;" href="#fashion">
+                    <span class="pin"></span>
+                    <img class="photo" src="images/outfits.png" alt="Painting of colorful outfits" />
+                    <span class="cap">fashion</span>
+                </a>
+
+                <!-- PROJECTS — painted-face folder -->
+                <a class="item link" style="left:20%;top:40%;width:15%;--r:-3deg;" href="#projects">
+                    <span class="pin" style="top:4%;left:70%;"></span>
+                    <img class="photo" src="images/face.png" alt="Painted-face file folder" />
+                    <span class="cap">projects</span>
+                </a>
+
+                <!-- EXPERIENCE — carpe diem folder -->
+                <a class="item link" style="left:40%;top:39%;width:15%;--r:3deg;" href="#experience">
+                    <span class="pin" style="top:4%;left:35%;"></span>
+                    <img class="photo" src="images/carpe.png" alt="Pink carpe diem file folder" />
+                    <span class="cap">experience</span>
+                </a>
+
+                <!-- AWARDS — trophy -->
+                <a class="item link" style="left:59%;top:40%;width:11%;--r:6deg;" href="#awards">
+                    <span class="pin" style="top:2%;"></span>
+                    <img class="photo" src="images/trophy.png" alt="Trophy" />
+                    <span class="cap">awards</span>
+                </a>
+
+                <!-- CINEMA — cinema tickets -->
+                <a class="item link" style="left:72%;top:39%;width:22%;--r:-4deg;" href="#cinema">
+                    <span class="pin" style="top:6%;left:44%;"></span>
+                    <img class="photo" src="images/tickets.png" alt="Two cinema tickets" />
+                    <span class="cap">shows &amp; movies</span>
+                </a>
+
+                <!-- FOOD — ramen -->
+                <a class="item link" style="left:26%;top:68%;width:15%;--r:-4deg;" href="#food">
+                    <span class="pin"></span>
+                    <img class="photo" src="images/ramen.png" alt="Bowl of ramen" />
+                    <span class="cap">food</span>
+                </a>
+
+                <!-- SOCIALS — letter -->
+                <a class="item link" style="left:48%;top:67%;width:18%;--r:3deg;" href="#socials">
+                    <span class="pin"></span>
+                    <img class="photo" src="images/letter.png" alt="Letter in a red envelope" />
+                    <span class="cap">socials</span>
+                </a>
+
+                <!-- decorative — heart note -->
+                <div class="item deco d-heart" style="left:90%;top:84%;width:6%;--r:-9deg;" aria-hidden="true">
+                    <div class="heart">♥</div>
+                </div>
+
             </div>
         </div>
-    </div>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    
-    <p class="name"><span class="highlight-pink">Arty Basilio</span></p>
-    <p class="intro"><i>&#161; Como el águila en mi bandera, vuelo! </b> My name is Arty Basilio, Soy Mexicana y Colombiana, and I’m currently a senior in High School. I’m interested in sustainability and helping the environment, and I’m also interested in pursuing coding.      <br /></p>
-    </p>
+        <p class="hint">psst — click any pin to look closer ✧ looks best on desktop</p>
+    </section>
 
-    <div id="currently" class="pink-background">
-        <div class="margin">
-            <p class="proj-title"><b>Computer Science Projects</b> @ GitHub <a href="https://github.com/pinkmatterr"
-                    style="float: right;font-size: 16px;">&nbsp;Mar 2024&#8212;Present</span></p>
-            <p class="proj-text">Currently the coding languages which I have the most experience with are C# from Unity, CSS, HTML, and Swift. I’m hoping to learn more about Python and JavaScript soon (Press here to see my projects on GitHub). </p>
-        </div>
-    </div>
-    
-   <div class="pink-background">
-  <div class="margin">
-    <h2 class="section-title"><span class="highlight-pink">What have I done before?</span></h2>
+    <!-- ============================ SECTION VIEWS ============================ -->
+    <article id="about" class="view">
+        <a href="#board" class="back">← back to the board</a>
+        <h1 class="view-title">hi, i'm arty</h1>
+        <p class="tagline">¡ como el águila en mi bandera, vuelo!</p>
+        <p>
+            soy mexicana y colombiana, and i'm currently a senior in high school. i'm interested in
+            sustainability and helping the environment, and i'm also interested in pursuing coding.
+        </p>
+    </article>
 
-      <p class="proj-title"><b>Presenter</b> @Curious Cardinals Symposium 
-      <p class="proj-text">I live in NYC and I wanted to research one of the biggest issues that I see everyday which is Trash. Trash overflows the city constantly and although some solutions are already being implemented I wanted to see if there was a solution that 
-      could solve that problem that hasn’t already been thought of. That is why over the summer I connected with multiple people at New York City’s
-      department of Sanitation and brainstormed solutions which could be implemented in the future. </p>
-    
-    <p class="proj-title"><b>Game Programmer                            </b> @ The City College of New York Aug 2023-Dec 2023                
-    <p class="proj-text">Learned how to utilize C Sharp on Unity over last fall and was able to create a 2D Platform game which was presented in front of my class.  </p>
-
-    <p class="proj-title"><b>Google Code Next Programmer                            </b> @ Google NYC  Sep 2023-Present                  
-    <p class="proj-text">Studied Swift Learned how to make an application using Swift UI and how to make an app on Vision Pro using swift data. Currently in the process of making an app to help lower income kids in NYC have a better chance at discovering opportunities that match their interests.
-    </p>
-    <p class="proj-title"><b> Girls Start-Up Intern </b> @ Seeds of Fortune May 2024-Present
-    <p class="proj-text"> 
-        <li>Selected as one of 20 out of 60 girls to be a Girls Start Up Finalist to pitch their business idea</li>
-        <li>Designed and pitched a business plan to industry experts at BMO capitals, for Girls with Charms that is used to strengthen “girlhood” and celebrate accomplishments </li>
-        <Li>Engaged in a rigorous virtual college preparatory program exploring professionalism and leadership</Li>
-        <li>Received $2000 as 3rd place winner for funding the app and web development of my business GirlsWithCharms through the Seeds of Fortune collaboration with the 10X competition</li>
-    </p>    
-  </div>
-</div>
-
-  <div class="pink-background">
-    <div class="margin">
-      <h2 class="section-title"><span class="highlight-pink">Awards & Recognition</span></h2>
-      <ul>  
-        <li>Gold Tech Hispanic Heritage Youth Award: 10 finalists, top recipient of CT, MA, NH, NY, RH, and VT, 2024</li>
-        <li>NCWIT Aspirations in Computing National Honorable Mention: Top 400 out of 3700+ chosen, 2025</li>
-        <li>Gates Scholarship Semifinalist: Top 8% of about 34,000+ seniors for academics and leadership, 2024</li>
-        <li>Questbridge National Match Finalist, 2024</li>
-        <li>Questbridge College Prep Scholar, 2024</li>
-        <li>Williams and Mary Leadership Award, 2024</li>
-        <li>3rd Place in the Girls Start Up Business Plan Competition, 2024</li>
-        <li>National Hispanic Recognition Program, 2024</li>
-        <li>Morgan Stanley Finance Academy Finalist, 2024</li>
-        <li>Grip Tape Scholarship Award, 2024</li>
-        <li>Full scholarship to Kode With Klossy’s Data Science camp, 2024</li>
-        <li>Finalist in Division A PSAL Girls Varsity Rugby, 2024</li>
-        <li>National Honors Society, 2024</li>
-        <li>Finalist in Division A PSAL Girls Varsity Rugby, 2023</li>
-        <li>Global Academic Excellence Award, 2023</li>
-      </ul>
-    </div>
-  </div>
-    
-    <div class="margin bottom-margin">
-        <div class="footer social-media">
-            <div class="social-media-item">
-                <a href="https://www.linkedin.com/in/artybasilio/" target="_blank"></a>
+    <article id="projects" class="view">
+        <a href="#board" class="back">← back to the board</a>
+        <h1 class="view-title">projects</h1>
+        <div class="entry">
+            <div class="entry-head">
+                <span class="entry-title">computer science projects</span>
+                <span class="entry-date">mar 2024 — present</span>
             </div>
+            <p class="entry-org">@ github</p>
+            <p>
+                the coding languages i have the most experience with are c# from unity, css, html, and
+                swift. i'm hoping to learn more about python and javascript soon.
+                <a href="https://github.com/pinkmatterr" target="_blank" rel="noopener">see my projects on github →</a>
+            </p>
         </div>
-        <p class="copyright">Copyright © 2024 Arty Basilio. All rights reserved.</p>
-    </div>
+    </article>
+
+    <article id="experience" class="view">
+        <a href="#board" class="back">← back to the board</a>
+        <h1 class="view-title">experience</h1>
+
+        <div class="entry">
+            <div class="entry-head"><span class="entry-title">presenter</span></div>
+            <p class="entry-org">@ curious cardinals symposium</p>
+            <p>
+                i live in nyc and i wanted to research one of the biggest issues i see everyday — trash.
+                it overflows the city constantly, and although some solutions are already being
+                implemented, i wanted to see if there was one that hasn't been thought of yet. over the
+                summer i connected with people at nyc's department of sanitation and brainstormed
+                solutions that could be implemented in the future.
+            </p>
+        </div>
+
+        <div class="entry">
+            <div class="entry-head">
+                <span class="entry-title">game programmer</span>
+                <span class="entry-date">aug 2023 — dec 2023</span>
+            </div>
+            <p class="entry-org">@ the city college of new york</p>
+            <p>learned how to use c# on unity last fall and built a 2d platform game which was presented in front of my class.</p>
+        </div>
+
+        <div class="entry">
+            <div class="entry-head">
+                <span class="entry-title">google code next programmer</span>
+                <span class="entry-date">sep 2023 — present</span>
+            </div>
+            <p class="entry-org">@ google nyc</p>
+            <p>
+                studied swift, learned how to build an app using swiftui and how to make an app on vision
+                pro using swift data. currently building an app to help lower-income kids in nyc have a
+                better chance at discovering opportunities that match their interests.
+            </p>
+        </div>
+
+        <div class="entry">
+            <div class="entry-head">
+                <span class="entry-title">girls start-up intern</span>
+                <span class="entry-date">may 2024 — present</span>
+            </div>
+            <p class="entry-org">@ seeds of fortune</p>
+            <ul class="entry-list">
+                <li>selected as one of 20 out of 60 girls to be a girls start-up finalist to pitch a business idea.</li>
+                <li>designed and pitched a business plan to industry experts at bmo capital, for girls with charms — used to strengthen "girlhood" and celebrate accomplishments.</li>
+                <li>engaged in a rigorous virtual college preparatory program exploring professionalism and leadership.</li>
+                <li>received $2,000 as 3rd place winner for funding the app and web development of girlswithcharms through the seeds of fortune collaboration with the 10x competition.</li>
+            </ul>
+        </div>
+    </article>
+
+    <article id="awards" class="view">
+        <a href="#board" class="back">← back to the board</a>
+        <h1 class="view-title">awards &amp; recognition</h1>
+        <ul class="awards">
+            <li><span>gold tech hispanic heritage youth award — 10 finalists, top recipient of ct, ma, nh, ny, ri, and vt</span><span class="yr">2024</span></li>
+            <li><span>ncwit aspirations in computing national honorable mention — top 400 of 3700+</span><span class="yr">2025</span></li>
+            <li><span>gates scholarship semifinalist — top 8% of ~34,000+ seniors</span><span class="yr">2024</span></li>
+            <li><span>questbridge national match finalist</span><span class="yr">2024</span></li>
+            <li><span>questbridge college prep scholar</span><span class="yr">2024</span></li>
+            <li><span>william &amp; mary leadership award</span><span class="yr">2024</span></li>
+            <li><span>3rd place, girls start-up business plan competition</span><span class="yr">2024</span></li>
+            <li><span>national hispanic recognition program</span><span class="yr">2024</span></li>
+            <li><span>morgan stanley finance academy finalist</span><span class="yr">2024</span></li>
+            <li><span>grip tape scholarship award</span><span class="yr">2024</span></li>
+            <li><span>full scholarship to kode with klossy's data science camp</span><span class="yr">2024</span></li>
+            <li><span>finalist, division a psal girls varsity rugby</span><span class="yr">2024</span></li>
+            <li><span>national honor society</span><span class="yr">2024</span></li>
+            <li><span>finalist, division a psal girls varsity rugby</span><span class="yr">2023</span></li>
+            <li><span>global academic excellence award</span><span class="yr">2023</span></li>
+        </ul>
+    </article>
+
+    <article id="photos" class="view">
+        <a href="#board" class="back">← back to the board</a>
+        <h1 class="view-title">photos</h1>
+        <p class="muted">a few stills i've taken. (drop your images into the boxes below — replace each placeholder with an &lt;img&gt;.)</p>
+        <div class="gallery">
+            <div class="ph">＋ add a photo</div>
+            <div class="ph">＋ add a photo</div>
+            <div class="ph">＋ add a photo</div>
+            <div class="ph">＋ add a photo</div>
+            <div class="ph">＋ add a photo</div>
+            <div class="ph">＋ add a photo</div>
+        </div>
+    </article>
+
+    <article id="food" class="view">
+        <a href="#board" class="back">← back to the board</a>
+        <h1 class="view-title">food</h1>
+        <p class="muted">things i've eaten &amp; made. (swap these placeholders for your own photos.)</p>
+        <div class="gallery">
+            <div class="ph">＋ add a photo</div>
+            <div class="ph">＋ add a photo</div>
+            <div class="ph">＋ add a photo</div>
+            <div class="ph">＋ add a photo</div>
+        </div>
+    </article>
+
+    <article id="fashion" class="view">
+        <a href="#board" class="back">← back to the board</a>
+        <h1 class="view-title">fashion</h1>
+        <p class="muted">outfits &amp; inspo. (swap these placeholders for your own photos.)</p>
+        <div class="gallery">
+            <div class="ph">＋ add a photo</div>
+            <div class="ph">＋ add a photo</div>
+            <div class="ph">＋ add a photo</div>
+            <div class="ph">＋ add a photo</div>
+        </div>
+    </article>
+
+    <article id="cinema" class="view">
+        <a href="#board" class="back">← back to the board</a>
+        <h1 class="view-title">shows &amp; movies</h1>
+        <p class="muted">my favorite films &amp; shows. (swap these placeholders for posters or stills.)</p>
+        <div class="gallery">
+            <div class="ph">＋ add a favorite</div>
+            <div class="ph">＋ add a favorite</div>
+            <div class="ph">＋ add a favorite</div>
+            <div class="ph">＋ add a favorite</div>
+            <div class="ph">＋ add a favorite</div>
+            <div class="ph">＋ add a favorite</div>
+        </div>
+    </article>
+
+    <article id="socials" class="view">
+        <a href="#board" class="back">← back to the board</a>
+        <h1 class="view-title">socials</h1>
+        <p class="socials-links">
+            <a href="https://www.linkedin.com/in/artybasilio/" target="_blank" rel="noopener">linkedin</a>
+            <a href="https://github.com/pinkmatterr" target="_blank" rel="noopener">github</a>
+        </p>
+        <p class="copyright">© 2024 arty basilio</p>
+    </article>
+
+    <script>
+        (function () {
+            var boardView = document.getElementById('board-view');
+            var views = Array.prototype.slice.call(document.querySelectorAll('.view'));
+            function route() {
+                var id = (location.hash || '').replace('#', '');
+                var target = id ? document.getElementById(id) : null;
+                var isView = target && target.classList.contains('view');
+                if (isView) {
+                    boardView.style.display = 'none';
+                    views.forEach(function (v) { v.style.display = (v === target) ? 'block' : 'none'; });
+                } else {
+                    boardView.style.display = '';
+                    views.forEach(function (v) { v.style.display = 'none'; });
+                }
+                window.scrollTo(0, 0);
+            }
+            window.addEventListener('hashchange', route);
+            route();
+        })();
+    </script>
 </body>
 
 </html>
